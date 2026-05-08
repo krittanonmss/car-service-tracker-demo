@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Service Tracker Demo</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-white">
+
+   <div class="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
+        <div class="grid h-full w-full grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+            
+            <div class="flex items-center justify-center">
+                <span class="rotate-[-30deg] text-3xl font-black uppercase tracking-[0.4em] text-white/[0.07]">
+                    DEMO
+                </span>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <span class="rotate-[-30deg] text-2xl font-black uppercase tracking-[0.4em] text-white/[0.07]">
+                    CAR SERVICE
+                </span>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <span class="rotate-[-30deg] text-3xl font-black uppercase tracking-[0.4em] text-white/[0.07]">
+                    TRACKER
+                </span>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <span class="rotate-[-30deg] text-2xl font-black uppercase tracking-[0.4em] text-white/[0.07]">
+                    DEMO VERSION
+                </span>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <span class="rotate-[-30deg] text-3xl font-black uppercase tracking-[0.4em] text-white/[0.07]">
+                    DEMO
+                </span>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <span class="rotate-[-30deg] text-2xl font-black uppercase tracking-[0.4em] text-white/[0.07]">
+                    CAR SERVICE
+                </span>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <span class="rotate-[-30deg] text-3xl font-black uppercase tracking-[0.4em] text-white/[0.07]">
+                    TRACKER
+                </span>
+            </div>
+
+            <div class="flex items-center justify-center">
+                <span class="rotate-[-30deg] text-2xl font-black uppercase tracking-[0.4em] text-white/[0.07]">
+                    DEMO VERSION
+                </span>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="flex min-h-screen">
+        <aside class="hidden w-72 shrink-0 border-r border-white/10 bg-slate-900/80 p-6 backdrop-blur-xl lg:block">
+            <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-xl shadow-slate-950/30">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-blue-300">
+                    Demo System
+                </p>
+                <h1 class="mt-3 text-xl font-bold leading-tight text-white">
+                    Car Service Tracker
+                </h1>
+                <p class="mt-2 text-sm text-slate-400">
+                    ระบบติดตามบริการรถยนต์และแจ้งเตือนลูกค้า
+                </p>
+            </div>
+
+            <nav class="mt-6 space-y-2">
+                <button
+                    type="button"
+                    class="nav-btn active flex w-full items-center justify-between rounded-2xl border border-blue-400/30 bg-blue-500/15 px-4 py-3 text-left text-sm font-medium text-blue-200"
+                    data-page="dashboard"
+                >
+                    <span>Dashboard</span>
+                    <span class="rounded-full bg-blue-500/20 px-2 py-0.5 text-xs">01</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="nav-btn flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-left text-sm font-medium text-slate-300 hover:bg-white/[0.08]"
+                    data-page="customers"
+                >
+                    <span>Customers</span>
+                    <span class="rounded-full bg-white/10 px-2 py-0.5 text-xs">02</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="nav-btn flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-left text-sm font-medium text-slate-300 hover:bg-white/[0.08]"
+                    data-page="vehicles"
+                >
+                    <span>Vehicles</span>
+                    <span class="rounded-full bg-white/10 px-2 py-0.5 text-xs">03</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="nav-btn flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-left text-sm font-medium text-slate-300 hover:bg-white/[0.08]"
+                    data-page="services"
+                >
+                    <span>Services</span>
+                    <span class="rounded-full bg-white/10 px-2 py-0.5 text-xs">04</span>
+                </button>
+
+                <button
+                    type="button"
+                    class="nav-btn flex w-full items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 text-left text-sm font-medium text-slate-300 hover:bg-white/[0.08]"
+                    data-page="import"
+                >
+                    <span>Import CSV</span>
+                    <span class="rounded-full bg-white/10 px-2 py-0.5 text-xs">05</span>
+                </button>
+            </nav>
+        </aside>
+
+        <main class="flex-1 overflow-hidden">
+            <header class="border-b border-white/10 bg-slate-950/70 px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-8">
+                <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                    <div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-blue-300">
+                            Car Service Tracker
+                        </p>
+                        <h2 class="mt-1 text-2xl font-bold text-white">
+                            ระบบติดตามบริการรถยนต์
+                        </h2>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            type="button"
+                            class="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-2.5 text-sm font-medium text-slate-200 hover:bg-white/[0.08]"
+                        >
+                            Export
+                        </button>
+
+                        <button
+                            type="button"
+                            class="rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-950/30 hover:from-blue-500 hover:to-indigo-500"
+                        >
+                            Generate Report
+                        </button>
+                    </div>
+                </div>
+
+                <div class="mt-4 grid gap-2 sm:grid-cols-5 lg:hidden">
+                    <button type="button" class="nav-btn active rounded-2xl border border-blue-400/30 bg-blue-500/15 px-3 py-2 text-sm text-blue-200" data-page="dashboard">Dashboard</button>
+                    <button type="button" class="nav-btn rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-300" data-page="customers">Customers</button>
+                    <button type="button" class="nav-btn rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-300" data-page="vehicles">Vehicles</button>
+                    <button type="button" class="nav-btn rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-300" data-page="services">Services</button>
+                    <button type="button" class="nav-btn rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-slate-300" data-page="import">Import</button>
+                </div>
+            </header>
+
+            <div class="h-[calc(100vh-133px)] overflow-y-auto px-4 py-6 sm:px-6 lg:px-8">
+                <section class="page active space-y-6" id="dashboard">
+                    <div class="overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 p-6 shadow-xl shadow-slate-950/30">
+                        <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                            <div class="max-w-2xl">
+                                <span class="inline-flex rounded-full border border-blue-400/20 bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-300">
+                                    Overview
+                                </span>
+
+                                <h3 class="mt-4 text-3xl font-bold text-white">
+                                    ภาพรวมงานบริการที่ใกล้ครบกำหนด
+                                </h3>
+
+                                <p class="mt-3 text-sm leading-6 text-slate-400">
+                                    ตรวจสอบลูกค้า รถยนต์ วันหมดอายุบริการ และสถานะการแจ้งเตือน SMS จากหน้าเดียว
+                                </p>
+                            </div>
+
+                            <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+                                <p class="text-sm text-slate-400">Next SMS Batch</p>
+                                <p class="mt-2 text-2xl font-bold text-white">20:30</p>
+                                <p class="mt-1 text-xs text-emerald-300">พร้อมส่งอัตโนมัติวันนี้</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                        <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-lg shadow-slate-950/20 backdrop-blur">
+                            <p class="text-sm text-slate-400">Customers</p>
+                            <p class="mt-3 text-3xl font-bold text-white">124</p>
+                            <p class="mt-2 text-xs text-emerald-300">+12 this month</p>
+                        </div>
+
+                        <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-lg shadow-slate-950/20 backdrop-blur">
+                            <p class="text-sm text-slate-400">Vehicles</p>
+                            <p class="mt-3 text-3xl font-bold text-white">188</p>
+                            <p class="mt-2 text-xs text-blue-300">active records</p>
+                        </div>
+
+                        <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-lg shadow-slate-950/20 backdrop-blur">
+                            <p class="text-sm text-slate-400">Upcoming Renewals</p>
+                            <p class="mt-3 text-3xl font-bold text-white">19</p>
+                            <p class="mt-2 text-xs text-amber-300">within 30 days</p>
+                        </div>
+
+                        <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-lg shadow-slate-950/20 backdrop-blur">
+                            <p class="text-sm text-slate-400">SMS Sent</p>
+                            <p class="mt-3 text-3xl font-bold text-white">72</p>
+                            <p class="mt-2 text-xs text-slate-400">latest campaign</p>
+                        </div>
+                    </div>
+
+                    <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-xl shadow-slate-950/30 backdrop-blur">
+                        <div class="flex flex-col gap-3 border-b border-white/10 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Upcoming Service Renewals</h3>
+                                <p class="mt-1 text-sm text-slate-400">รายการที่ควรติดตามและแจ้งเตือนลูกค้า</p>
+                            </div>
+
+                            <div class="flex gap-2">
+                                <input
+                                    type="search"
+                                    placeholder="Search customer..."
+                                    class="rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-2 text-sm text-white placeholder:text-slate-500 focus:border-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-500/10"
+                                />
+
+                                <button
+                                    type="button"
+                                    class="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-slate-200 hover:bg-white/[0.08]"
+                                >
+                                    Filter
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full text-left text-sm">
+                                <thead class="bg-slate-950/50 text-xs uppercase tracking-wider text-slate-400">
+                                    <tr>
+                                        <th class="px-6 py-4 font-medium">Customer</th>
+                                        <th class="px-6 py-4 font-medium">Vehicle</th>
+                                        <th class="px-6 py-4 font-medium">Expire Date</th>
+                                        <th class="px-6 py-4 font-medium">Status</th>
+                                        <th class="px-6 py-4 font-medium">Action</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="divide-y divide-white/10">
+                                    <tr class="hover:bg-white/[0.03]">
+                                        <td class="px-6 py-4 text-white">Somchai</td>
+                                        <td class="px-6 py-4 text-slate-300">Toyota Hilux</td>
+                                        <td class="px-6 py-4 text-slate-300">2026-06-01</td>
+                                        <td class="px-6 py-4">
+                                            <span class="rounded-full border border-amber-400/20 bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-300">
+                                                30 Days Left
+                                            </span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <button type="button" class="rounded-xl border border-blue-400/20 bg-blue-500/10 px-3 py-1.5 text-xs text-blue-300 hover:bg-blue-500/20">
+                                                Send SMS
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="hover:bg-white/[0.03]">
+                                        <td class="px-6 py-4 text-white">Anan</td>
+                                        <td class="px-6 py-4 text-slate-300">Honda Civic</td>
+                                        <td class="px-6 py-4 text-slate-300">2026-06-07</td>
+                                        <td class="px-6 py-4">
+                                            <span class="rounded-full border border-emerald-400/20 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
+                                                Active
+                                            </span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <button type="button" class="rounded-xl border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs text-slate-300 hover:bg-white/[0.08]">
+                                                View
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="hover:bg-white/[0.03]">
+                                        <td class="px-6 py-4 text-white">Nida</td>
+                                        <td class="px-6 py-4 text-slate-300">Isuzu D-Max</td>
+                                        <td class="px-6 py-4 text-slate-300">2026-05-15</td>
+                                        <td class="px-6 py-4">
+                                            <span class="rounded-full border border-rose-400/20 bg-rose-500/10 px-3 py-1 text-xs font-medium text-rose-300">
+                                                Urgent
+                                            </span>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <button type="button" class="rounded-xl border border-blue-400/20 bg-blue-500/10 px-3 py-1.5 text-xs text-blue-300 hover:bg-blue-500/20">
+                                                Send SMS
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page hidden" id="customers">
+                    <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-slate-950/30 backdrop-blur">
+                        <div class="flex items-center justify-between gap-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Customers</h3>
+                                <p class="mt-1 text-sm text-slate-400">จัดการข้อมูลลูกค้า</p>
+                            </div>
+
+                            <button type="button" class="rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2.5 text-sm font-semibold text-white">
+                                + Add Customer
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page hidden" id="vehicles">
+                    <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-slate-950/30 backdrop-blur">
+                        <div class="flex items-center justify-between gap-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Vehicles</h3>
+                                <p class="mt-1 text-sm text-slate-400">จัดการข้อมูลรถยนต์</p>
+                            </div>
+
+                            <button type="button" class="rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2.5 text-sm font-semibold text-white">
+                                + Add Vehicle
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page hidden" id="services">
+                    <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-slate-950/30 backdrop-blur">
+                        <div class="flex items-center justify-between gap-4">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Service Records</h3>
+                                <p class="mt-1 text-sm text-slate-400">จัดการประวัติงานบริการ</p>
+                            </div>
+
+                            <button type="button" class="rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2.5 text-sm font-semibold text-white">
+                                + Create Service
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="page hidden" id="import">
+                    <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-xl shadow-slate-950/30 backdrop-blur">
+                        <h3 class="text-lg font-semibold text-white">Import CSV</h3>
+                        <p class="mt-1 text-sm text-slate-400">นำเข้าข้อมูลลูกค้า รถยนต์ และบริการจากไฟล์ CSV</p>
+
+                        <div class="mt-6 rounded-3xl border-2 border-dashed border-white/10 bg-slate-950/40 p-10 text-center">
+                            <p class="text-sm text-slate-400">ลากไฟล์ CSV มาวางที่นี่</p>
+
+                            <button
+                                type="button"
+                                class="mt-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-2.5 text-sm font-semibold text-white"
+                            >
+                                Select File
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
